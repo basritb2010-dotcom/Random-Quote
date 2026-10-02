@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background-image: url("pemandangan.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+/* Lapisan gelap di atas background */
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Card quote */
+body > div {
+    position: relative;
+    z-index: 1;
+
+    width: 500px;
+    min-height: 300px;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    /* Efek transparan */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Quote */
+#quoteID {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+/* Author */
+#authorID {
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #eeeeee;
+
+    margin-bottom: 30px;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: #333;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: #eeeeee;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    body > div {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #quoteID {
+        font-size: 21px;
+    }
+}
+
